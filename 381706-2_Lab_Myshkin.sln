@@ -1,0 +1,51 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ALL_BUILD", "ALL_BUILD.vcxproj", "{32696F1A-AF7C-34BD-86E5-BEA76DCF343A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EBE61D37-CC16-31A8-8026-99BC3A04ABF3} = {EBE61D37-CC16-31A8-8026-99BC3A04ABF3}
+		{99FCFB68-F8FD-3FD7-AF00-3949DAFB6713} = {99FCFB68-F8FD-3FD7-AF00-3949DAFB6713}
+		{B7CEEB3C-AE49-3A10-9125-A42AD7505F26} = {B7CEEB3C-AE49-3A10-9125-A42AD7505F26}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ZERO_CHECK", "ZERO_CHECK.vcxproj", "{EBE61D37-CC16-31A8-8026-99BC3A04ABF3}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vector", "vector\vector.vcxproj", "{99FCFB68-F8FD-3FD7-AF00-3949DAFB6713}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EBE61D37-CC16-31A8-8026-99BC3A04ABF3} = {EBE61D37-CC16-31A8-8026-99BC3A04ABF3}
+		{B7CEEB3C-AE49-3A10-9125-A42AD7505F26} = {B7CEEB3C-AE49-3A10-9125-A42AD7505F26}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vectorlib", "vectorlib\vectorlib.vcxproj", "{B7CEEB3C-AE49-3A10-9125-A42AD7505F26}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EBE61D37-CC16-31A8-8026-99BC3A04ABF3} = {EBE61D37-CC16-31A8-8026-99BC3A04ABF3}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32696F1A-AF7C-34BD-86E5-BEA76DCF343A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{32696F1A-AF7C-34BD-86E5-BEA76DCF343A}.Release|Win32.ActiveCfg = Release|Win32
+		{EBE61D37-CC16-31A8-8026-99BC3A04ABF3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EBE61D37-CC16-31A8-8026-99BC3A04ABF3}.Debug|Win32.Build.0 = Debug|Win32
+		{EBE61D37-CC16-31A8-8026-99BC3A04ABF3}.Release|Win32.ActiveCfg = Release|Win32
+		{EBE61D37-CC16-31A8-8026-99BC3A04ABF3}.Release|Win32.Build.0 = Release|Win32
+		{99FCFB68-F8FD-3FD7-AF00-3949DAFB6713}.Debug|Win32.ActiveCfg = Debug|Win32
+		{99FCFB68-F8FD-3FD7-AF00-3949DAFB6713}.Debug|Win32.Build.0 = Debug|Win32
+		{99FCFB68-F8FD-3FD7-AF00-3949DAFB6713}.Release|Win32.ActiveCfg = Release|Win32
+		{99FCFB68-F8FD-3FD7-AF00-3949DAFB6713}.Release|Win32.Build.0 = Release|Win32
+		{B7CEEB3C-AE49-3A10-9125-A42AD7505F26}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B7CEEB3C-AE49-3A10-9125-A42AD7505F26}.Debug|Win32.Build.0 = Debug|Win32
+		{B7CEEB3C-AE49-3A10-9125-A42AD7505F26}.Release|Win32.ActiveCfg = Release|Win32
+		{B7CEEB3C-AE49-3A10-9125-A42AD7505F26}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {114EBED8-8155-36BD-8B69-5FC3D087988E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
