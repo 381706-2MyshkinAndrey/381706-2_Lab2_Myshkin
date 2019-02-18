@@ -9,12 +9,20 @@ set(vectortest vectortest)
 set(matrixtest matrixtest)
 set(matrixlib matrixlib)
 
+set(stacklib stacklib)
+set(stacktest stacktest)
+set(stack stack)
+
+set(queue queue)
+set(queuelib queuelib)
+set(queuetest queuetest)
+
 set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Configs" FORCE) #Создается переменная CMAKE_CONFIGURATION_TYPES со значением "Debug;Release" и меткой/разделом Configs, переменная сохраниется в специальном файле доступном из всех файлов,
 if(NOT CMAKE_BUILD_TYPE) # проверка имеющихся у компилятора вариантов сборки
   set(CMAKE_BUILD_TYPE Release) #Если нет то устанавливаем Release
 endif()
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/vectorlib ${CMAKE_CURRENT_SOURCE_DIR}/matrixlib ${CMAKE_CURRENT_SOURCE_DIR}/exeptionlib ${CMAKE_CURRENT_SOURCE_DIR}/gtest)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/vectorlib ${CMAKE_CURRENT_SOURCE_DIR}/matrixlib ${CMAKE_CURRENT_SOURCE_DIR}/exeptionlib ${CMAKE_CURRENT_SOURCE_DIR}/gtest ${CMAKE_CURRENT_SOURCE_DIR}/stacklib ${CMAKE_CURRENT_SOURCE_DIR}/queuelib)
 
 add_subdirectory(vector)
 add_subdirectory(vectorlib)
@@ -23,6 +31,14 @@ add_subdirectory(gtest)
 add_subdirectory(matrixtest)
 add_subdirectory(matrixlib)
 add_subdirectory(exeptionlib)
+
+add_subdirectory(stack)
+add_subdirectory(stacklib)
+add_subdirectory(stacktest)
+
+add_subdirectory(queue)
+add_subdirectory(queuelib)
+add_subdirectory(queuetest)
 
 
 
