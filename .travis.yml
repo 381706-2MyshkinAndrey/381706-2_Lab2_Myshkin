@@ -8,6 +8,7 @@ before_script:
 script:
   - cmake ../381706-2_Labs_Myshkin
   - make -j
+  - ./vector/vector
   - ./vectortest/vectortest
   - ./matrixtest/matrixtest
   - ./stacktest/stacktest
