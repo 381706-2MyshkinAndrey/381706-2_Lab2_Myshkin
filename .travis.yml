@@ -10,5 +10,7 @@ script:
   - make -j
   - ./vectortest/vectortest
   - ./matrixtest/matrixtest
+  - ./stacktest/stacktest
+  - ./queuetest/queuetest
 notifications:
   email: false
