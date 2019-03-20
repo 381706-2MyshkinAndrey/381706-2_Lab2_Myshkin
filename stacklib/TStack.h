@@ -12,8 +12,8 @@ protected: // поля
   int t; // индекс последнего занятого в Mem
   int memSize;
 public:
-  TStack(int Size = 0);
-  ~TStack();
+  TStack(int Size = 32);
+  virtual ~TStack();
   int IsEmpty(); // контроль пустоты
   int GetSize();
   int GetCount();// число элементов в стеке
@@ -65,6 +65,7 @@ int TStack<ValType>::GetCount()
 template<class ValType>
 int TStack<ValType>::IsFull()
 {
+
   return t == (memSize - 1);
 }
 
@@ -87,7 +88,7 @@ ValType TStack<ValType>::Get()
 template <class ValType>
 void TStack<ValType>::Print() { // печать значений стека
   for (int i = 0; i< t + 1; i++)
-    std::cout << mem[i];
+    std::cout << mem[i] << ' ';
   std::cout << std::endl;
 }
 
