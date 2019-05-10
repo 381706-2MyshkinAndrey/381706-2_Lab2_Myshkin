@@ -13,5 +13,6 @@ script:
   - ./matrixtest/matrixtest
   - ./stacktest/stacktest
   - ./queuetest/queuetest
+  - ./multistacktest/multistacktest
 notifications:
   email: false
