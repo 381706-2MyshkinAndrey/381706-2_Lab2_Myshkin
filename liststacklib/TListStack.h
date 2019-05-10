@@ -16,10 +16,10 @@ protected:
 public:
   TListStack();
   ~TListStack();
-  int IsEmpty() const; // контроль переполнени€ —ƒ
+  int IsEmpty() const; 
   int GetLength();
-  void Put(ValType Val); // добавить значение в стек
-  ValType Get(); // извлечь значение из стека
+  void Put(ValType Val); 
+  ValType Get(); 
   void Print();
 };
 
