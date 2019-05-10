@@ -16,5 +16,6 @@ script:
   - ./multistacktest/multistacktest
   - ./datlisttest/datlisttest
   - ./arrlisttest/arrlisttest
+  - ./liststacktest/liststacktest
 notifications:
   email: false
