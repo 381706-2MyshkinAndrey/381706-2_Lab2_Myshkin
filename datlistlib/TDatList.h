@@ -11,25 +11,25 @@ protected:
   TDatLink<ValType>* pLast; // последнее звено
   int listCount; // количество звеньев в списке
 
-protected: // методы
+protected: 
   TDatLink<ValType>* GetLink(ValType Val = NULL, TDatLink<ValType>* pLink = NULL);
-  void DelLink(TDatLink<ValType>* pLink); // удаление звена
+  void DelLink(TDatLink<ValType>* pLink); 
 
 public:
   TDatList();
   TDatList(const TDatList& dl);
   ~TDatList() { DelList(); }
-  ValType& GetDatValue(int num) const; // значение
-  int IsEmpty() const { return pFirst == NULL; } // список пуст ?
-  int GetListLength() const { return listCount; } // к-во звеньев
-                                                // вставка звеньев
-  void InsFirst(const ValType &Val); // вставить перед первым
-  void InsLast(const ValType &Val); // вставить последним
-  void InsTo(int num, const ValType& Val); // вставить на позицию
-                                    // удаление звеньев
-  void DelFirst(); // удалить первое звено 
-  void Del(int num); // произвольное звено
-  void DelList(); // удалить весь список
+  ValType& GetDatValue(int num) const; 
+  int IsEmpty() const { return pFirst == NULL; } 
+  int GetListLength() const { return listCount; } 
+                                                
+  void InsFirst(const ValType &Val); 
+  void InsLast(const ValType &Val); 
+  void InsTo(int num, const ValType& Val); 
+                                   
+  void DelFirst(); 
+  void Del(int num); 
+  void DelList();
 };
 
 template<class ValType>
