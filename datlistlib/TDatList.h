@@ -154,7 +154,7 @@ void TDatList<ValType>::Del(int num)
     pTempPrev->SetNextLink(pTemp->GetNextLink());
     DelLink(pTemp);
   }
-  listLen--;
+  listCount--;
 }
 
 template<class ValType>
