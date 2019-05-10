@@ -8,6 +8,7 @@ set(vectorlib vectorlib)
 set(vectortest vectortest)
 set(matrixtest matrixtest)
 set(matrixlib matrixlib)
+set(exeptionlib exeptionlib)
 
 set(stacklib stacklib)
 set(stacktest stacktest)

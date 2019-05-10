@@ -5,7 +5,7 @@
 int main(int argc, char* argv[]) 
 {
   setlocale(LC_ALL, "");
-  TMatrix<int> a(5), b(5), c(5), d(5);
+  TMatrix<int> a(5), b(5), c(5);
   int i, j;
   cout << "Тестирование программ поддержки треугольных матриц" << endl;
   for (i = 0; i < 5; i++)
@@ -18,9 +18,5 @@ int main(int argc, char* argv[])
   cout << "Matrix a = " << endl << a << endl;
   cout << "Matrix b = " << endl << b << endl;
   cout << "Matrix c = a + b" << endl << c << endl;
-
-  d = a * b;
-  cout << "Matrix d = a * b" << endl << d << endl;
-
   return 0;
 }

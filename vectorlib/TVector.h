@@ -25,7 +25,9 @@ public:
   ValType & operator[] (int pos); // доступ
   int operator==(const TVector &v); // сравнение
   TVector & operator= (const TVector &v); // присванивание
+                                          // скалярные операции
   TVector operator* (const ValType &val); // умножить на скаляр
+                                          // векторные операции
   TVector operator+ (const ValType &val);
   TVector operator- (const ValType &val);
   TVector operator+ (const TVector &v); // сложение 
@@ -49,140 +51,140 @@ public:
 template<class ValType>
 TVector<ValType>::TVector()
 {
-	pVector = NULL;
-	size = 0;
-	startIndex = 0;
+  pVector = NULL;
+  size = 0;
+  startIndex = 0;
 }
 
 template<class ValType>
 TVector<ValType>::TVector(int s, int si)
 {
-	if ((s < 0) || (si < 0))
-		throw 1;
-	if (s == 0)
-	{
-		pVector = NULL;
-		size = 0;
-		startIndex = 0;
-	}
-	else
-	{
-		pVector = new ValType[s];
-		for (int i = 0; i < s; i++)
-			pVector[i] = 0;
-	}
-	size = s;
-	startIndex = si;
+  if ((s < 0) || (si < 0))
+    throw 1;
+  if (s == 0)
+  {
+    pVector = NULL;
+    size = 0;
+    startIndex = 0;
+  }
+  else
+  {
+    pVector = new ValType[s];
+    for (int i = 0; i < s; i++)
+      pVector[i] = 0;
+  }
+  size = s;
+  startIndex = si;
 }
 
 template<class ValType>
 TVector<ValType>::TVector(const TVector & v)
 {
-	size = v.size;
-	startIndex = v.startIndex;
-	pVector = new ValType[size];
-	for (int i = 0; i < size; i++)
-		pVector[i] = v.pVector[i];
+    size = v.size;
+    startIndex = v.startIndex;
+    pVector = new ValType[size];
+    for (int i = 0; i < size; i++)
+      pVector[i] = v.pVector[i];
 }
 
 
 template<class ValType>
 TVector<ValType>::~TVector()
 {
-	delete[]pVector;
+  delete[]pVector;
 }
 
 
 template<class ValType>
 ValType & TVector<ValType>::GetValue(int pos)
 {
-	if ((pos < 0) || (pos >= size))
-		throw 1;
-	return pVector[pos - startIndex];
+  if ((pos < 0) || (pos >= size))
+    throw 1;
+  return pVector[pos - startIndex];
 }
 
 template<class ValType>
 ValType & TVector<ValType>::operator[](int pos)
 {
-	return pVector[pos - startIndex];
+  return pVector[pos - startIndex];
 }
 
 template<class ValType>
 int TVector<ValType>::operator==(const TVector & v)
 {
-	if (v.size == size)
-	{
-		int res = 0;
-		for (int i = 0; i < size; i++)
-			res |= (pVector[i] ^ v.pVector[i]);
-		return (res == 0);
-	}
-	return 0;
+  if (v.size == size)
+  {
+    int res = 1;
+    for (int i = 0; i < size; i++)
+      res *= (pVector[i] == v.pVector[i]);
+    return (res == 1);
+  }
+  return 0;
 }
 
 template<class ValType>
 TVector<ValType> & TVector<ValType>::operator=(const TVector &v)
 {
-	if (v.pVector != pVector)
-	{
-		size = v.size;
-		startIndex = v.startIndex;
-		if (pVector)
-			delete[]pVector;
-		pVector = new ValType[size];
-		for (int i = 0; i < size; i++)
-			pVector[i] = v.pVector[i];
-	}
-	return *this;
+  if (v.pVector != pVector)
+  {
+    size = v.size;
+    startIndex = v.startIndex;
+    if (pVector)
+      delete[]pVector;
+    pVector = new ValType[size];
+    for (int i = 0; i < size; i++)
+      pVector[i] = v.pVector[i];
+  }
+  return *this;
 }
 
 template<class ValType>
 TVector<ValType> TVector<ValType>::operator*(const ValType & val)
 {
-	TVector<ValType> res(size, startIndex);
-	for (int i = 0; i < size; i++)
-		res[i] = pVector[i] * val;
-	return res;
+  TVector<ValType> res(size, startIndex);
+  for (int i = 0; i < size; i++)
+    res[i] = pVector[i]*val;
+  return res;
 }
 template<class ValType>
 TVector<ValType> TVector<ValType>::operator+(const ValType & val)
 {
-	TVector<ValType> res(size, startIndex);
-	for (int i = 0; i < size; i++)
-		res[i] += val;
-	return res;
+  TVector<ValType> res(size, startIndex);
+  for (int i = 0; i < size; i++)
+    res[i] += val;
+  return res;
 }
 template<class ValType>
 TVector<ValType> TVector<ValType>::operator-(const ValType & val)
 {
-	TVector<ValType> res(size, startIndex);
-	for (int i = 0; i < size; i++)
-		res[i] -= val;
-	return res;
+  TVector<ValType> res(size, startIndex);
+  for (int i = 0; i < size; i++)
+    res[i] -= val;
+  return res;
 }
 template<class ValType>
 TVector<ValType> TVector<ValType>::operator+(const TVector & v)
 {
-	TVector<ValType> res(size, startIndex);
-	for (int i = 0; i < size; i++)
-		res.pVector[i] = v.pVector[i] + pVector[i];
-	return res;
+  TVector<ValType> res(size, startIndex);
+  for (int i = 0; i < size; i++)
+    res.pVector[i] = v.pVector[i] + pVector[i];
+  return res;
 }
 template<class ValType>
 TVector<ValType> TVector<ValType>::operator-(const TVector & v)
 {
-	TVector<ValType> res(size, startIndex);
-	for (int i = 0; i < size; i++)
-		res.pVector[i] = pVector[i] - v.pVector[i];
-	return res;
+  TVector<ValType> res(size, startIndex);
+  for (int i = 0; i < size; i++)
+    res.pVector[i] = pVector[i] - v.pVector[i];
+  return res;
 }
 
 template<class ValType>
 ValType TVector<ValType>::operator*(const TVector & v)
 {
-	ValType res = 0;
-	for (int i = 0; i < size; i++)
-		res += v.pVector[i] * pVector[i];
-	return res;
+  ValType res = 0;
+  for (int i = 0; i < size; i++)
+    res += v.pVector[i] * pVector[i];
+  return res;
 }
 #endif
