@@ -175,7 +175,7 @@ void TArrList<ValType>::DelFirst()
   if (IsEmpty())
     throw TExeption(DataEmpty);
   int tmp = firstInd;
-  firstInd = index[firstInd];
+  firstInd = indexNext[firstInd];
   indexNext[tmp] = -2;
   count--;
 }
@@ -188,7 +188,7 @@ void TArrList<ValType>::DelLast()
   while (indexNext[LastInd] != -1)
   {
     PrevInd = LastInd;
-    LastInd = index[LastInd];
+    LastInd = indexNext[LastInd];
   }
   indexNext[LastInd] = -2;
   indexNext[PrevInd] = -1;
