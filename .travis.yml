@@ -17,5 +17,6 @@ script:
   - ./datlisttest/datlisttest
   - ./arrlisttest/arrlisttest
   - ./liststacktest/liststacktest
+  - ./polynomialtest/polynomialtest
 notifications:
   email: false
