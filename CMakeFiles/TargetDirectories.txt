@@ -1,4 +1,0 @@
-C:/Users/myshkin.a/Desktop/381706-2_Lab2_Myshkin/381706-2_Lab2_Myshkin/CMakeFiles/ALL_BUILD.dir
-C:/Users/myshkin.a/Desktop/381706-2_Lab2_Myshkin/381706-2_Lab2_Myshkin/CMakeFiles/ZERO_CHECK.dir
-C:/Users/myshkin.a/Desktop/381706-2_Lab2_Myshkin/381706-2_Lab2_Myshkin/vector/CMakeFiles/vector.dir
-C:/Users/myshkin.a/Desktop/381706-2_Lab2_Myshkin/381706-2_Lab2_Myshkin/vectorlib/CMakeFiles/vectorlib.dir
