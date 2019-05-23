@@ -1,10 +1,13 @@
 #include <iostream>
 #include "TMatrix.h"
+#include <ctime>
+#include <cstdlib>
 
 
 int main(int argc, char* argv[]) 
 {
   setlocale(LC_ALL, "");
+  srand(time(NULL));
   TMatrix<int> a(5), b(5), c(5), d(5);
   int i, j;
   cout << "Тестирование программ поддержки треугольных матриц" << endl;
