@@ -19,5 +19,10 @@ script:
   - ./polynomialtest/polynomialtest
   - ./infixtopolishtest/infixtopolishtest
   - ./texttreetest/texttreetest
+  - ./tabletest/tabletest
+  - ./sorttabletest/sorttabletest
+  - ./treetabletest/treetabletest
+  - ./hashtabletest/hashtabletest
+  - ./plextest/plextest
 notifications:
   email: false

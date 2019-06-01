@@ -47,12 +47,33 @@ set(texttree texttree)
 set(texttreelib texttreelib)
 set(texttreetest texttreetest)
 
+set(table table)
+set(tablelib tablelib)
+set(tabletest tabletest)
+
+set(sorttable sorttable)
+set(sorttablelib sorttablelib)
+set(sorttabletest sorttabletest)
+
+set(treetable treetable)
+set(treetablelib treetablelib)
+set(treetabletest treetabletest)
+
+set(hashtablelib hashtablelib)
+set(hashtable hashtable)
+set(hashtabletest hashtabletest)
+
+set(plexlib plexlib)
+set(plex plex)
+set(plextest plextest)
+
+
 set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Configs" FORCE) #Создается переменная CMAKE_CONFIGURATION_TYPES со значением "Debug;Release" и меткой/разделом Configs, переменная сохраниется в специальном файле доступном из всех файлов,
 if(NOT CMAKE_BUILD_TYPE) # проверка имеющихся у компилятора вариантов сборки
   set(CMAKE_BUILD_TYPE Release) #Если нет то устанавливаем Release
 endif()
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/vectorlib ${CMAKE_CURRENT_SOURCE_DIR}/matrixlib ${CMAKE_CURRENT_SOURCE_DIR}/exeptionlib ${CMAKE_CURRENT_SOURCE_DIR}/gtest ${CMAKE_CURRENT_SOURCE_DIR}/stacklib ${CMAKE_CURRENT_SOURCE_DIR}/queuelib ${CMAKE_CURRENT_SOURCE_DIR}/multistacklib ${CMAKE_CURRENT_SOURCE_DIR}/datlistlib ${CMAKE_CURRENT_SOURCE_DIR}/datlink ${CMAKE_CURRENT_SOURCE_DIR}/arrlistlib ${CMAKE_CURRENT_SOURCE_DIR}/liststacklib ${CMAKE_CURRENT_SOURCE_DIR}/polynomiallib ${CMAKE_CURRENT_SOURCE_DIR}/infixtopolishlib ${CMAKE_CURRENT_SOURCE_DIR}/texttreelib)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/vectorlib ${CMAKE_CURRENT_SOURCE_DIR}/matrixlib ${CMAKE_CURRENT_SOURCE_DIR}/exeptionlib ${CMAKE_CURRENT_SOURCE_DIR}/gtest ${CMAKE_CURRENT_SOURCE_DIR}/stacklib ${CMAKE_CURRENT_SOURCE_DIR}/queuelib ${CMAKE_CURRENT_SOURCE_DIR}/multistacklib ${CMAKE_CURRENT_SOURCE_DIR}/datlistlib ${CMAKE_CURRENT_SOURCE_DIR}/datlink ${CMAKE_CURRENT_SOURCE_DIR}/arrlistlib ${CMAKE_CURRENT_SOURCE_DIR}/liststacklib ${CMAKE_CURRENT_SOURCE_DIR}/polynomiallib ${CMAKE_CURRENT_SOURCE_DIR}/infixtopolishlib ${CMAKE_CURRENT_SOURCE_DIR}/texttreelib ${CMAKE_CURRENT_SOURCE_DIR}/tablelib ${CMAKE_CURRENT_SOURCE_DIR}/sorttablelib ${CMAKE_CURRENT_SOURCE_DIR}/treetablelib ${CMAKE_CURRENT_SOURCE_DIR}/hashtablelib ${CMAKE_CURRENT_SOURCE_DIR}/plexlib)
 
 add_subdirectory(vector)
 add_subdirectory(vectorlib)
@@ -99,6 +120,25 @@ add_subdirectory(texttree)
 add_subdirectory(texttreelib)
 add_subdirectory(texttreetest)
 
+add_subdirectory(table)
+add_subdirectory(tablelib)
+add_subdirectory(tabletest)
+
+add_subdirectory(sorttable)
+add_subdirectory(sorttablelib)
+add_subdirectory(sorttabletest)
+
+add_subdirectory(treetable)
+add_subdirectory(treetablelib)
+add_subdirectory(treetabletest)
+
+add_subdirectory(hashtablelib)
+add_subdirectory(hashtabletest)
+add_subdirectory(hashtable)
+
+add_subdirectory(plexlib)
+add_subdirectory(plextest)
+add_subdirectory(plex)
 
 #file(GLOB hdrs "*.h*") #Добавляем в переменную hdrs все файлы с расширением .h
 #file(GLOB srcs "*.cpp") #Добавляем в переменную srcs все файлы с расширением .cpp
