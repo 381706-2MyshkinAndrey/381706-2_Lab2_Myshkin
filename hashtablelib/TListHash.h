@@ -47,7 +47,7 @@ template<class ValType>
 unsigned long TListHash<ValType>::HashFunc(TKey k)
 {
   unsigned  long hashval = 0;
-  int len = k.GetLen();
+  int len = k.GetLength();
   for (int i = 0; i < len; i++)
     hashval = (hashval << 3) + k[i];
   return hashval;
