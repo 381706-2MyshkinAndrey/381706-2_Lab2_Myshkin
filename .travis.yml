@@ -18,5 +18,6 @@ script:
   - ./liststacktest/liststacktest
   - ./polynomialtest/polynomialtest
   - ./infixtopolishtest/infixtopolishtest
+  - ./texttreetest/texttreetest
 notifications:
   email: false

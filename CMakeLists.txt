@@ -43,13 +43,16 @@ set(infixtopolish infixtopolish)
 set(infixtopolishlib infixtopolishlib)
 set(infixtopolishtest infixtopolishtest)
 
+set(texttree texttree)
+set(texttreelib texttreelib)
+set(texttreetest texttreetest)
 
 set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Configs" FORCE) #Создается переменная CMAKE_CONFIGURATION_TYPES со значением "Debug;Release" и меткой/разделом Configs, переменная сохраниется в специальном файле доступном из всех файлов,
 if(NOT CMAKE_BUILD_TYPE) # проверка имеющихся у компилятора вариантов сборки
   set(CMAKE_BUILD_TYPE Release) #Если нет то устанавливаем Release
 endif()
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/vectorlib ${CMAKE_CURRENT_SOURCE_DIR}/matrixlib ${CMAKE_CURRENT_SOURCE_DIR}/exeptionlib ${CMAKE_CURRENT_SOURCE_DIR}/gtest ${CMAKE_CURRENT_SOURCE_DIR}/stacklib ${CMAKE_CURRENT_SOURCE_DIR}/queuelib ${CMAKE_CURRENT_SOURCE_DIR}/multistacklib ${CMAKE_CURRENT_SOURCE_DIR}/datlistlib ${CMAKE_CURRENT_SOURCE_DIR}/datlink ${CMAKE_CURRENT_SOURCE_DIR}/arrlistlib ${CMAKE_CURRENT_SOURCE_DIR}/liststacklib ${CMAKE_CURRENT_SOURCE_DIR}/polynomiallib ${CMAKE_CURRENT_SOURCE_DIR}/infixtopolishlib)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/vectorlib ${CMAKE_CURRENT_SOURCE_DIR}/matrixlib ${CMAKE_CURRENT_SOURCE_DIR}/exeptionlib ${CMAKE_CURRENT_SOURCE_DIR}/gtest ${CMAKE_CURRENT_SOURCE_DIR}/stacklib ${CMAKE_CURRENT_SOURCE_DIR}/queuelib ${CMAKE_CURRENT_SOURCE_DIR}/multistacklib ${CMAKE_CURRENT_SOURCE_DIR}/datlistlib ${CMAKE_CURRENT_SOURCE_DIR}/datlink ${CMAKE_CURRENT_SOURCE_DIR}/arrlistlib ${CMAKE_CURRENT_SOURCE_DIR}/liststacklib ${CMAKE_CURRENT_SOURCE_DIR}/polynomiallib ${CMAKE_CURRENT_SOURCE_DIR}/infixtopolishlib ${CMAKE_CURRENT_SOURCE_DIR}/texttreelib)
 
 add_subdirectory(vector)
 add_subdirectory(vectorlib)
@@ -91,6 +94,10 @@ add_subdirectory(polynomialtest polynomialtest)
 add_subdirectory(infixtopolish)
 add_subdirectory(infixtopolishlib)
 add_subdirectory(infixtopolishtest)
+
+add_subdirectory(texttree)
+add_subdirectory(texttreelib)
+add_subdirectory(texttreetest)
 
 
 #file(GLOB hdrs "*.h*") #Добавляем в переменную hdrs все файлы с расширением .h
